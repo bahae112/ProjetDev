@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>About</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <style>
+      
+
+      .chatbot {
+        position: fixed;
+        
+        width: 250px; /* Largeur du chatbot */
+        height: 390px; /* Hauteur du conteneur */
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+        display: flex;
+        flex-direction: column;
+        right: 40px; /* Positionné à 40px du bord droit */
+        bottom: 180px; 
+        /*position: relative;*/
+        /*margin: 120px; /* Marge entre la fenêtre et le bord de l'écran */
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .chatbot-toggler{
+        position: fixed;
+        right: 40px;
+        bottom: 100px;
+        height: 50px;
+        width: 50px;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        background: #2c3e50;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+        z-index: 10000; 
+        
+      }
+      
+      .chatbot-toggler span{
+        position: absolute;
+        
+      }
+      .chatbot-toggler span:first-child{
+        
+        visibility: visible;
+      }
+      .chatbot-toggler span:last-child{
+      
+        visibility: hidden;
+      }
+      
+      .chatbot iframe {
+                  width: 100%;
+                  height: 100%;
+                  border: none; /* Enlève la bordure par défaut de l'iframe */
+              }
+      
+      /* iframe {
+        border: none; /* Retire la bordure de l'iframe 
+        flex: 1;
+      
+      }*/
+        
+      
+      
+      
+        </style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header rd-navbar-transparent-wrap">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="44px" data-xl-stick-up-offset="44px" data-xxl-stick-up-offset="44px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-aside-outer rd-navbar-collapse">
+              <div class="rd-navbar-aside">
+                <div class="rd-navbar-info">
+                  <div class="icon novi-icon mdi mdi-phone"></div><a href="tel:#">+212 666 666</a>
+                </div>
+                <ul class="list-lined">
+                  <li><a href="connexion.html">Log in</a></li>
+                  <li><a href="inscription.html">Create an account</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main-inner">
+                <div class="rd-navbar-main">
+                  <!--RD Navbar Panel-->
+                  <div class="rd-navbar-panel">
+                    <!--RD Navbar Toggle-->
+                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                    <!--RD Navbar Brand-->
+                    <div class="rd-navbar-brand">
+                      <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-293x44.png" alt="" width="146" height="22"/><img class="brand-logo-light" src="images/logo-inverse-310x44.png" alt="" width="155" height="22"/></a>
+                    </div>
+                  </div>
+                  <div class="rd-navbar-main-element">
+                    <div class="rd-navbar-nav-wrap">
+                      <ul class="rd-navbar-nav">
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="index2.html">Home</a>
+                        </li>
+                        <li class="rd-nav-item active"><a class="rd-nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Assistance</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                        </li>
+                        
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="rd-navbar-bg novi-background bg-image" style="background-image: url(images/headerlogo.png)"></div>
+      </header>
+      <!-- Breadcrumbs-->
+      <section class="breadcrumbs-custom bg-image novi-background bg-primary">
+        <div class="container">
+          <ul class="breadcrumbs-custom-path">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">About</li>
+          </ul>
+        </div>
+      </section>
+      <!-- Our Story-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <h2><span class="text-light">Our</span> Story</h2>
+          <div class="row row-30 justify-content-xl-between">
+            <div class="col-md-6 col-xl-6">
+              <p class="big">Nous sommes un groupe d'étudiants ingénieurs passionnés par les technologies de l'information et la gestion financière. Nous avons développé ce site web pour vous aider à gérer votre budget de manière efficace et simplifiée</p>
+              <div class="box-shadow-2">
+                <div class="box-shadow-header">
+                  <div class="unit flex-column flex-md-row">
+                    <div class="unit-left">
+                      <div class="heading-5">2024</div>
+                    </div>
+                    <div class="unit-body">
+                      <p>Notre mission est de fournir des outils et des ressources pour vous permettre de prendre le contrôle de vos finances personnelles. Que vous souhaitiez suivre vos dépenses, établir un budget, ou économiser pour un objectif spécifique, notre site est conçu pour répondre à vos besoins.</p>
+                    </div>
+                  </div>
+                </div><video class="img-responsive" width="569" src="images/about1.mp4" height="338" autoplay loop muted>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-5">
+              <ul class="list-lg">
+                <li>
+                  <div class="heading-5">Pourquoi Nous?</div>
+                  <p class="p-offset-1"><strong>Expertise Technique :</strong> En tant qu'étudiants ingénieurs, nous avons appliqué nos compétences en développement web et en gestion de données pour créer une plateforme intuitive et fiable.
+                    <br><br><strong>Solution Pratique :</strong> Nous comprenons les défis de la gestion financière et avons conçu notre site pour être accessible et facile à utiliser, même pour les novices en matière de finances.
+                    <br><br><strong>Support Communautaire :</strong> Nous croyons en la force de la communauté. Notre site offre des forums et des ressources pour que vous puissiez partager vos expériences et obtenir des conseils d'autres utilisateurs.
+                  </p>
+                </li>
+                <li>
+                  <div class="heading-5">Les Débuts</div>
+                  <p class="p-offset-1">Notre aventure a commencé sur les bancs de l'université, où un groupe d'étudiants ingénieurs passionnés s'est réuni autour d'un projet commun : créer des solutions innovantes pour relever les défis financiers. Animés par notre intérêt pour la gestion budgétaire et la comptabilité, nous avons entrepris de combiner nos compétences techniques avec des connaissances financières approfondies.</p>
+                </li>
+                <li>
+                  <div class="heading-5">La Création de Notre Site</div>
+                  <p class="p-offset-1">Inspirés par nos expériences , nous avons décidé de formaliser notre démarche en créant notre propre siteweb. Notre objectif était clair : offrir des services de gestion budgétaire et de comptabilité adaptés aux besoins des particuliers et des entreprises, avec une approche personnalisée et innovante.</p>
+                </li>
+                <li><a class="button button-primary" href="#">Read more</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Our Principles-->
+      <section class="section section-lg bg-gray-100">
+        <div class="container text-center text-lg-left">
+          <h2><span class="text-light">Our</span> Principles</h2>
+          <div class="row row-30 number-counter-2">
+            <div class="col-md-4">
+              <div class="box-numbered-left unit">
+                <div class="unit-left">
+                  <div class="index-counter"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">Trust</h5>
+                  <div class="content">La confiance est au cœur de notre démarche. Nous croyons fermement que des relations solides et durables se construisent sur la transparence et l'intégrité. Chaque décision que nous prenons est guidée par la volonté de maintenir cette confiance avec nos clients, en leur offrant des services financiers clairs, précis et honnêtes.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="box-numbered-left unit">
+                <div class="unit-left">
+                  <div class="index-counter"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">Integrity</h5>
+                  <div class="content">L'intégrité est le pilier central de notre Site. Nous nous engageons à agir avec honnêteté et éthique dans toutes nos actions. Cela signifie que nous respectons les normes les plus strictes en matière de transparence financière et de conformité, et que nous traitons chaque client et chaque projet avec le plus grand respect et la plus grande honnêteté. Nous croyons que notre succès repose sur la confiance et la crédibilité que nous établissons avec nos clients .</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="box-numbered-left unit">
+                <div class="unit-left">
+                  <div class="index-counter"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">Honesty</h5>
+                  <div class="content">L'honnêteté est une valeur fondamentale de notre Site. Nous croyons en une communication claire et directe avec nos clients. Nous nous engageons à être transparents dans toutes nos interactions, en fournissant des informations précises et complètes. Nous reconnaissons que la confiance se construit grâce à la vérité, et nous nous efforçons de maintenir cette vérité dans toutes nos actions. En traitant chaque situation avec sincérité.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Our Clients-->
+      
+      <!-- Our Team-->
+      <section class="section section-lg bg-default">
+        <div class="container text-center text-lg-left">
+          <h2><span class="text-light">Our</span> Team</h2>
+          <div class="row row-40">
+            <div class="col-md-3">
+              <div class="team-box-left">
+                <div class="team-meta unit align-items-center">
+                  <div class="unit-left"><img class="img" src="images/testimonials-1-138x138.jpg" alt="" width="138" height="69"/>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="title">Aouanet Bahaeddine</h5>
+                    <div class="subtitle">Développeur</div>
+                  </div>
+                </div>
+                <div class="content">Eleve ingenieur en premiere anne cycle ingenieurie genie informatique , developpeur </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="team-box-left">
+                <div class="team-meta unit align-items-center">
+                  <div class="unit-left"><img class="img" src="images/testimonials-2-138x138.jpg" alt="" width="138" height="69"/>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="title">Ajal Saad</h5>
+                    <div class="subtitle">Développeur</div>
+                  </div>
+                </div>
+                <div class="content">Élève ingénieur en première année de cycle d'ingénierie en génie informatique, développeur.</div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="team-box-left">
+                <div class="team-meta unit align-items-center">
+                  <div class="unit-left"><img class="img" src="images/testimonials-2-138x138.jpg" alt="" width="138" height="69"/>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="title">Errazi FatimaZahra</h5>
+                    <div class="subtitle">Développeuse</div>
+                  </div>
+                </div>
+                <div class="content">Élève ingénieure en première année de cycle d'ingénierie en génie informatique, développeuse.</div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="team-box-left">
+                <div class="team-meta unit align-items-center">
+                  <div class="unit-left"><img class="img" src="images/testimonials-3-138x138.jpg" alt="" width="138" height="69"/>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="title">Maarafi Asmae</h5>
+                    <div class="subtitle">Développeuse</div>
+                  </div>
+                </div>
+                <div class="content">Élève ingénieure en première année de cycle d'ingénierie en génie informatique, développeuse.</div>
+              </div>
+            </div>
+          </div><a class="button button-primary" href="#">View all team</a>
+        </div>
+      </section>
+      <footer class="section footer-classic">
+        <div class="footer-inner-1">
+          <div class="container">
+            <div class="row row-40">
+              <div class="col-md-5 col-lg-3"  >
+                <h5>Our Contacts</h5>
+                <ul class="contact-list font-weight-bold">
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-map-marker"></div>
+                      </div>
+                      <div class="unit-body"><a href="#">Casablanca <br>Maroc</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-phone"></div>
+                      </div>
+                      <div class="unit-body"><a href="tel:#">+212 000 000 000</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-clock"></div>
+                      </div>
+                      <div class="unit-body">
+                        <ul class="list-0">
+                          <li>Weekdays: 00:00–00:00</li>
+                          <li>Weekends: Closed</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul><a class="d-inline-block big" href="mailto:#">mail@demolink.org</a>
+              </div>
+              <div class="col-md-6 col-lg-5" style="margin-left:300px">
+                <h5>Links</h5>
+                <div class="row row-5 justify-content-between">
+                  <div class="col-sm-6">
+                    <ul class="footer-list big">
+                      <li><a href="#">IRS Publications</a></li>
+                      <li><a href="#">Record Retention Guide</a></li>
+                      <li><a href="#">Tax Due Dates</a></li>
+                      <li><a href="#">Tax Forms</a></li>
+                      <li><a href="#">Tax Rates</a></li>
+                      <li><a href="#">Where is my refund?</a></li>
+                      <li><a href="#">Retirement</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-4 col-lg-6 col-xxl-5">
+                    <ul class="footer-list big">
+                      <li><a href="#">Retirement</a></li>
+                      <li><a href="#">Investment</a></li>
+                      <li><a href="#">Real Estate</a></li>
+                      <li><a href="#">Insurance</a></li>
+                      <li><a href="#">Tax</a></li>
+                      <li><a href="#">Money</a></li>
+                      <li><a href="#">Other Resources</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-inner-2">
+          <div class="container">
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <button class="chatbot-toggler" >
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="close-btn material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+<iframe 
+allow="microphone;"
+height="430" 
+width="350" 
+
+src="https://console.dialogflow.com/api-client/demo/embedded/b5d0062e-b365-49ec-8729-734ae92e57a5">
+</iframe>
+</div>
+    <script>
+      const chatBox = document.querySelector(".chatbot");
+      const chatbotToggler1 = document.querySelector(".chatbot-toggler span:first-child");
+      const chatbotToggler2 = document.querySelector(".chatbot-toggler span:last-child");
+      
+      chatbotToggler1.addEventListener("click", function(){
+          chatBox.style.visibility = "visible";
+          chatbotToggler1.style.visibility = "hidden";
+          chatbotToggler2.style.visibility = "visible";
+      });
+      
+      chatbotToggler2.addEventListener("click", function(){
+          chatBox.style.visibility = "hidden";
+          chatbotToggler2.style.visibility = "hidden";
+          chatbotToggler1.style.visibility = "visible";
+      });
+    </script>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

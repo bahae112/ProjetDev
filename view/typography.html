@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Typography</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <style>
+      
+
+      .chatbot {
+        position: fixed;
+        
+        width: 250px; /* Largeur du chatbot */
+        height: 390px; /* Hauteur du conteneur */
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+        display: flex;
+        flex-direction: column;
+        right: 40px; /* Positionné à 40px du bord droit */
+        bottom: 180px; 
+        /*position: relative;*/
+        /*margin: 120px; /* Marge entre la fenêtre et le bord de l'écran */
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .chatbot-toggler{
+        position: fixed;
+        right: 40px;
+        bottom: 100px;
+        height: 50px;
+        width: 50px;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        background: #2c3e50;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+        z-index: 10000; 
+        
+      }
+      
+      .chatbot-toggler span{
+        position: absolute;
+        
+      }
+      .chatbot-toggler span:first-child{
+        
+        visibility: visible;
+      }
+      .chatbot-toggler span:last-child{
+      
+        visibility: hidden;
+      }
+      
+      .chatbot iframe {
+                  width: 100%;
+                  height: 100%;
+                  border: none; /* Enlève la bordure par défaut de l'iframe */
+              }
+      
+      /* iframe {
+        border: none; /* Retire la bordure de l'iframe 
+        flex: 1;
+      
+      }*/
+        
+      
+      
+      
+        </style>
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header rd-navbar-transparent-wrap">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="44px" data-xl-stick-up-offset="44px" data-xxl-stick-up-offset="44px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-aside-outer rd-navbar-collapse">
+              <div class="rd-navbar-aside">
+                <div class="rd-navbar-info">
+                  <div class="icon novi-icon mdi mdi-phone"></div><a href="tel:#">+212 000 000 000</a>
+                </div>
+                <ul class="list-lined">
+                  <li><a href="connexion.html">Log in</a></li>
+                  <li><a href="inscription.html">Create an account</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main-inner">
+                <div class="rd-navbar-main">
+                  <!--RD Navbar Panel-->
+                  <div class="rd-navbar-panel">
+                    <!--RD Navbar Toggle-->
+                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                    <!--RD Navbar Brand-->
+                    <div class="rd-navbar-brand">
+                      <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-293x44.png" alt="" width="146" height="22"/><img class="brand-logo-light" src="images/logo-inverse-310x44.png" alt="" width="155" height="22"/></a>
+                    </div>
+                  </div>
+                  <div class="rd-navbar-main-element">
+                    <div class="rd-navbar-nav-wrap">
+                      <ul class="rd-navbar-nav">
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="index2.html">Home</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="rd-nav-item active"><a class="rd-nav-link" href="typography.html">Assistance</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                        </li>
+                        
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="rd-navbar-bg novi-background bg-image" style="background-image: url(images/headerlogo.png)"></div>
+      </header>
+      <!-- Breadcrumbs-->
+      <section class="breadcrumbs-custom bg-image novi-background bg-primary">
+        <div class="container">
+          <ul class="breadcrumbs-custom-path">
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="inscription.html">Create an account</a></li>
+          </ul>
+        </div>
+      </section>
+      <!--Base typography -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-30 flex-lg-row-reverse justify-content-between">
+            <div class="col-lg-4">
+              <ul class="list-type-2">
+                <li>
+                  <h4><span class="text-light">Support Client Personnalisé 1</span> </h4>
+                </li>
+                <li>
+                  <h4><span class="text-light">Disponibilité 2</span> </h4>
+                </li>
+                <li>
+                  <h4><span class="text-light">Assistance Technique 3</span> </h4>
+                </li>
+                <li>
+                  <h4><span class="text-light"></span>Centre de Ressources 4</span></h4>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-7">
+              <ul class="list-type-1">
+                <li>
+                  <h4>Support Client Personnalisé 1</h4>
+                  <p class="big">Nous offrons un support client personnalisé pour répondre à vos questions et résoudre vos problèmes spécifiques. Que vous ayez besoin d'aide pour comprendre un rapport financier ou pour optimiser votre budget, notre équipe est là pour vous assister.</p>
+                </li>
+                <li>
+                  <h4>Disponibilité 2</h4>
+                  <p class="big">Notre équipe d'assistance est disponible pour vous aider à tout moment. Vous pouvez nous contacter par téléphone, email ou chat en ligne que nous offrons.</p>
+                </li>
+                <li>
+                  <h4>Assistance Technique 3</h4>
+                  <p class="big">Si vous rencontrez des problèmes techniques avec nos outils ou notre site web, notre équipe d'assistance technique est prête à vous aider. Nous offrons un support rapide et efficace pour résoudre vos problèmes et vous permettre de continuer à utiliser nos services sans interruption.</p>
+                </li>
+                <li>
+                  <h4>Centre de Ressources 4</h4>
+                  <p class="big">Notre centre de ressources en ligne est une mine d'informations pour nos clients. Vous y trouverez des guides pratiques, des articles de blog, et des FAQ pour vous aider à tirer le meilleur parti de nos services et outils. Accédez à notre centre de ressources à tout moment pour trouver des réponses à vos questions.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Blockquote-->
+      <section class="section bg-gray-100 box-image-left">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="section-md section-md-bottom-50">
+                <h2 class="title-icon"><span class="icon icon-default mercury-icon-speak"></span><span>Testimonials</span></h2>
+                <!-- Owl Carousel-->
+                <div class="owl-carousel owl-carousel-1" data-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
+                  <blockquote class="quote quote-simple">
+                    <q>Our website is one of the best when it comes to high-quality corporate structuring, financial strategy, and tax management.</q>
+                    <div class="quote-meta">
+                      <div class="author">
+                        <cite>...</cite>
+                      </div>
+                      <div class="position">.......</div>
+                    </div>
+                  </blockquote>
+                  <blockquote class="quote quote-simple">
+                    <q>I've had the pleasure of working with these guys for over 7 years. Over the time, they've been the best accountants to work with.</q>
+                    <div class="quote-meta">
+                      <div class="author">
+                        <cite>Sam Jackson</cite>
+                      </div>
+                      <div class="position">Lawyer</div>
+                    </div>
+                  </blockquote>
+                  <blockquote class="quote quote-simple">
+                    <q>The staff members at Costrax are friendly, knowledgeable, and experienced. That’s what I like most about them.</q>
+                    <div class="quote-meta">
+                      <div class="author">
+                        <cite>Ann White</cite>
+                      </div>
+                      <div class="position">Regional Manager</div>
+                    </div>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-image-item novi-background bg-image" style="background-image: url(images/assistance.png)"></div>
+      </section>
+      <!-- Testimonials-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-md-10 col-lg-4">
+              <h2>Services</h2>
+              <blockquote class="quote quote-left-align">
+                <q class="big">We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests</q>
+                <div class="quote-meta unit">
+                  <div class="unit-left"><img class="quote-img" src="images/consulting.png" alt="" width="138" height="69"/>
+                  </div>
+                  <div class="unit-body">
+                    <div class="author">
+                      <cite>Consulting</cite>
+                    </div>
+                  </div>
+                </div>
+              </blockquote><a class="button button-primary" href="#">More Services</a>
+            </div>
+            <div class="col-lg-8">
+              <div class="row row-30">
+                <div class="col-sm-6">
+                  <blockquote class="quote quote-center quote-center-active">
+                    <q class="big">Nous facilitons la gestion de vos projets en mettant l'accent sur la clarté et la communication, vous permettant ainsi d'atteindre vos objectifs dans les délais impartis. Notre processus comprend une évaluation initiale et se conclut par la présentation de solutions adaptées à vos besoins.</q>
+                    <div class="quote-meta"><img class="quote-img" src="images/management.png" alt="" width="138" height="69"/>
+                      <div class="author">
+                        <cite>Management</cite>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+                <div class="col-sm-6">
+                  <div class="owl-item-simulate">
+                    <blockquote class="quote quote-center">
+                      <q class="big">Nos prévisions perspicaces sont le fruit d'une analyse approfondie et d'une expertise avancée dans notre domaine. En anticipant les tendances émergentes et les évolutions du marché, nous sommes en mesure d'adapter nos solutions pour répondre aux défis à venir. Notre engagement envers les prévisions perspicaces garantit que vous aider à anticiper vos besoins financiers futurs et à élaborer des stratégies adaptées à vos objectifs.</q>
+                      <div class="quote-meta"><img class="quote-img" src="images/previsions.png" alt="" width="138" height="69"/>
+                        <div class="author">
+                          <cite> Prévisions Perspicaces</cite>
+                        </div>
+                      </div>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--HTML Text Elements-->
+      <!--Unordered List-->
+      
+      <!--Ordered List-->
+      <!--Icon List 1-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row box-icon-1-wrap">
+            <div class="col-md-4 box-icon-1">
+              <div class="icon novi-icon mercury-icon-calc"></div>
+              <h5 class="title">Accounting Services</h5>
+              <p class="text">We offer a full range of comprehensive accounting services to companies throughout the US and European countries.</p>
+            </div>
+            <div class="col-md-4 box-icon-1">
+              <div class="icon novi-icon mercury-icon-chart"></div>
+              <h5 class="title">Taxation</h5>
+              <p class="text">Ce service vous permet de soumettre et de consulter vos déclarations de revenus et de recevoir une notification instantanée de la réception de la déclaration. Il offre également la possibilité d'accéder à des rapports détaillés et à des diagrammes pour une meilleure visualisation de vos données financières.</p>
+            </div>
+            <div class="col-md-4 box-icon-1">
+              <div class="icon novi-icon mercury-icon-time-sand"></div>
+              <h5 class="title">Financial Services</h5>
+              <p class="text">Our website offers various financial services including insurance, wealth management, tax consulting, and more.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!--Icon List 3-->
+      <section class="section section-lg bg-default">
+        <div class="container text-center text-lg-left">
+          <div class="row row-30 row-lg-50">
+            <div class="col-sm-6 col-md-4">
+              <div class="box-icon-3 unit flex-column flex-lg-row">
+                <div class="unit-left">
+                  <div class="icon novi-icon mercury-icon-wallet"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">Gestion Comptable</h5>
+                  <p class="text">Nous proposons d'autres expériences partagées en matière de services de tenue de livres.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="box-icon-3 unit flex-column flex-lg-row">
+                <div class="unit-left">
+                  <div class="icon novi-icon mercury-icon-presentation-2"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">Consulting</h5>
+                  <p class="text"> nous avons accès à des outils et à une formation QuickBooks de qualité.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="box-icon-3 unit flex-column flex-lg-row">
+                <div class="unit-left">
+                  <div class="icon novi-icon mercury-icon-calc"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">Services de Préparation Fiscale</h5>
+                  <p class="text">Nous proposons des services professionnels, conviviaux et précis de préparation fiscale.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="box-icon-3 unit flex-column flex-lg-row">
+                <div class="unit-left">
+                  <div class="icon novi-icon mercury-icon-chat"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">onsultation en Management</h5>
+                  <p class="text">Nous vous accompagnons dans la croissance de votre budget, l'augmentation de vos revenus et l'amélioration de votre efficacité.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="box-icon-3 unit flex-column flex-lg-row">
+                <div class="unit-left">
+                  <div class="icon novi-icon mercury-icon-house"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">Planification Patrimoniale</h5>
+                  <p class="text">Notre Website offre des services complets de planification patrimoniale adaptés à vos objectifs spécifiques.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="box-icon-3 unit flex-column flex-lg-row">
+                <div class="unit-left">
+                  <div class="icon novi-icon mercury-icon-time-sand"></div>
+                </div>
+                <div class="unit-body">
+                  <h5 class="title">Plans de Retraite</h5>
+                  <p class="text">Notre équipe de professionnels vous aidera à concevoir un plan de retraite parfaitement adapté à vos besoins à court terme.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Image Left-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-md-6"><video class="img-responsive" width="544" src="images/assistance2.mp4" height="342" autoplay loop muted></video>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <h5>Proposition de Planification</h5>
+              <p class="big">nous proposons des services de planification personnalisés pour répondre aux exigences particulières de votre entreprise. Que vous souhaitiez optimiser votre structure financière, planifier vos investissements futurs, ou préparer votre succession, notre équipe d'experts travaille avec vous pour élaborer des stratégies efficaces et adaptées.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Image Right-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-30 flex-md-row-reverse justify-content-end">
+            <div class="col-md-6"><video class="img-responsive" width="544" src="images/assistance3.mp4" height="342" autoplay loop muted></video>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <h5>Évaluation de la Situation</h5>
+              <p class="big">Avant de proposer des solutions, il est essentiel de comprendre la situation actuelle de votre entreprise. Nous offrons des services d'évaluation complète de votre situation financière, permettant d'identifier les forces, les faiblesses, et les opportunités. Notre évaluation approfondie inclut l'analyse de vos états financiers . </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Image Centered-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+              <h5>Conseils Personnalisés</h5>
+              <figure class="figure-light"><video class="img-responsive" width="544" src="images/assistance4.mp4" height="342" autoplay loop muted></video>
+              </figure>
+              <p class="big">nous croyons que des conseils adaptés sont essentiels pour le succès de votre entreprise. Nos conseillers expérimentés sont à votre disposition pour vous fournir des recommandations personnalisées, basées sur une compréhension approfondie de votre situation particulière.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="section footer-classic">
+        <div class="footer-inner-1">
+          <div class="container">
+            <div class="row row-40">
+              <div class="col-md-5 col-lg-3"  >
+                <h5>Our Contacts</h5>
+                <ul class="contact-list font-weight-bold">
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-map-marker"></div>
+                      </div>
+                      <div class="unit-body"><a href="#">Casablanca <br>Maroc</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-phone"></div>
+                      </div>
+                      <div class="unit-body"><a href="tel:#">+212 000 000 000</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-clock"></div>
+                      </div>
+                      <div class="unit-body">
+                        <ul class="list-0">
+                          <li>Weekdays: 00:00–00:00</li>
+                          <li>Weekends: Closed</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul><a class="d-inline-block big" href="mailto:#">mail@demolink.org</a>
+              </div>
+              <div class="col-md-6 col-lg-5" style="margin-left:300px">
+                <h5>Links</h5>
+                <div class="row row-5 justify-content-between">
+                  <div class="col-sm-6">
+                    <ul class="footer-list big">
+                      <li><a href="#">IRS Publications</a></li>
+                      <li><a href="#">Record Retention Guide</a></li>
+                      <li><a href="#">Tax Due Dates</a></li>
+                      <li><a href="#">Tax Forms</a></li>
+                      <li><a href="#">Tax Rates</a></li>
+                      <li><a href="#">Where is my refund?</a></li>
+                      <li><a href="#">Retirement</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-4 col-lg-6 col-xxl-5">
+                    <ul class="footer-list big">
+                      <li><a href="#">Retirement</a></li>
+                      <li><a href="#">Investment</a></li>
+                      <li><a href="#">Real Estate</a></li>
+                      <li><a href="#">Insurance</a></li>
+                      <li><a href="#">Tax</a></li>
+                      <li><a href="#">Money</a></li>
+                      <li><a href="#">Other Resources</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-inner-2">
+          <div class="container">
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <button class="chatbot-toggler" >
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="close-btn material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+<iframe 
+allow="microphone;"
+height="430" 
+width="350" 
+
+src="https://console.dialogflow.com/api-client/demo/embedded/b5d0062e-b365-49ec-8729-734ae92e57a5">
+</iframe>
+</div>
+    <script>
+      const chatBox = document.querySelector(".chatbot");
+      const chatbotToggler1 = document.querySelector(".chatbot-toggler span:first-child");
+      const chatbotToggler2 = document.querySelector(".chatbot-toggler span:last-child");
+      
+      chatbotToggler1.addEventListener("click", function(){
+          chatBox.style.visibility = "visible";
+          chatbotToggler1.style.visibility = "hidden";
+          chatbotToggler2.style.visibility = "visible";
+      });
+      
+      chatbotToggler2.addEventListener("click", function(){
+          chatBox.style.visibility = "hidden";
+          chatbotToggler2.style.visibility = "hidden";
+          chatbotToggler1.style.visibility = "visible";
+      });
+    </script>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

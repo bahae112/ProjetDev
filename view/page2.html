@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Clients</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container1,
+        .container2 {
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+        }
+
+        .container1 {
+            width: 340px;
+            height: 90vh;
+        }
+
+        .container2 {
+            width: calc(100% - 380px);
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .button-row button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 8px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .button-option1 {
+            background-color: #4CAF50;
+        }
+
+        .button-option2 {
+            background-color: #f44336;
+        }
+
+        .button-option3 {
+            background-color: #ff9800;
+        }
+
+        .button-option4 {
+            background-color: #9c27b0;
+        }
+
+        .button-row button:hover {
+            opacity: 0.8;
+        }
+
+        #dynamic-content {
+            margin-top: 10px;
+            flex-grow: 1;
+        }
+
+        #delete-button {
+            margin-top: 10px;
+            padding: 8px;
+            cursor: pointer;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        #delete-button:hover {
+            opacity: 0.8;
+        }
+
+        .container-fluid {
+            display: flex;
+            height: 90%;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        #content {
+            padding: 20px;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="./page1.html" >Clients</a></li>
+            <li><a href="./page2.html" >Conseiller Financier</a></li>
+            <li><a href="./page3.html" >Réclamation</a></li>
+        </ul>
+    </nav>
+    <div class="container-fluid" id="here">
+        <div class="container1 col-md-4">
+            <h1>CONSEILLER</h1>
+            <table>
+                <tr>
+                    <th>Nom du conseiller</th>
+                </tr>
+                <tr>
+                    <th id='ligneNom'></th>
+                </tr>
+            </table>
+        </div>
+        <div class="container2 col-md-9">
+            <div class="button-row">
+                <button class="button-option1" onclick="changeContent('option1')">Conseillers financiers </button>
+                <button class="button-option2" onclick="changeContent('option2')">Supprimer conseiller
+                    financier</button>
+                <button class="button-option3" onclick="changeContent('option3')">Bloquer conseiller financier</button>
+                <button class="button-option4" onclick="changeContent('option4')">Conseillers financiers
+                    bloqués</button>
+            </div>
+            <div id="dynamic-content">
+                <h2>Liste des financiers</h2>
+                <table id="client-table" border="1">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                    </tr>
+                </table>
+            </div>
+            <button id="delete-button" onclick="deleteSelectedClients()">Supprimer les Conseillers sélectionnés</button>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 offset-md-11">
+                    <a href="connexion.html" class="btn btn-secondary">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeContent(option) {
+            const dynamicContentDiv = document.getElementById('dynamic-content');
+            if (option === 'option1') {
+                document.getElementById('delete-button').style.display = 'none'
+                dynamicContentDiv.innerHTML = "";
+                                    const xhr = new XMLHttpRequest();
+        xhr.open("GET", "../controller/userController.php?action=allconseiller", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    try {
+                        const clients = xhr.responseText;
+                        let tableContent = xhr.responseText;
+
+                        dynamicContentDiv.innerHTML += `${tableContent}</table>`;
+                    } catch (e) {
+                        console.error('Error parsing JSON:', e);
+                        dynamicContentDiv.innerHTML = `<h2>Error</h2><p>Invalid JSON22 response</p>`;
+                    }
+                } else {
+                    console.error('HTTP Error:', xhr.status, xhr.statusText);
+                    dynamicContentDiv.innerHTML = `<h2>Error</h2><p>HTTP Error: ${xhr.status}</p>`;
+                }
+            }
+        };
+
+        xhr.send();
+
+            }
+
+            else if (option === 'option2') {
+                document.getElementById('delete-button').style.display = 'block';
+                document.getElementById('delete-button').innerHTML = 'Supprimer les Conseiller sélectionnés';
+                dynamicContentDiv.innerHTML = dynamicContentDiv.innerHTML=""
+                const xhr = new XMLHttpRequest();
+        xhr.open("GET", "../controller/userController.php?action=conseiller", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    try {
+                        const clients = xhr.responseText;
+                        let tableContent = xhr.responseText;
+                        
+
+                        dynamicContentDiv.innerHTML += `<table border='1'>${tableContent}</table>`;
+                    } catch (e) {
+                        console.error('Error parsing JSON:', e);
+                        dynamicContentDiv.innerHTML = `<h2>Error</h2><p>Invalid JSON22 response</p>`;
+                    }
+                } else {
+                    console.error('HTTP Error:', xhr.status, xhr.statusText);
+                    dynamicContentDiv.innerHTML = `<h2>Error</h2><p>HTTP Error: ${xhr.status}</p>`;
+                }
+            }
+        };
+
+        xhr.send();
+            } else if (option === 'option3') {
+                document.getElementById('delete-button').style.display = 'block';
+                document.getElementById('delete-button').style.backgroundcolor = 'orange';
+                document.getElementById('delete-button').innerHTML = 'bloquer';
+                dynamicContentDiv.innerHTML=""
+                const xhr = new XMLHttpRequest();
+        xhr.open("GET", "../controller/userController.php?action=conseiller", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    try {
+                        const clients = xhr.responseText;
+                        let tableContent = xhr.responseText;
+                        
+
+                        dynamicContentDiv.innerHTML += `<table border='1'>${tableContent}</table>`;
+                    } catch (e) {
+                        console.error('Error parsing JSON:', e);
+                        dynamicContentDiv.innerHTML = `<h2>Error</h2><p>Invalid JSON22 response</p>`;
+                    }
+                } else {
+                    console.error('HTTP Error:', xhr.status, xhr.statusText);
+                    dynamicContentDiv.innerHTML = `<h2>Error</h2><p>HTTP Error: ${xhr.status}</p>`;
+                }
+            }
+        };
+
+        xhr.send();
+            } else if (option === 'option4') {
+                document.getElementById('delete-button').style.display = 'none'
+                dynamicContentDiv.innerHTML = "";
+                                    const xhr = new XMLHttpRequest();
+        xhr.open("GET", "../controller/userController.php?action=conseillerBlocked", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    try {
+                        const clients = xhr.responseText;
+                        let tableContent = xhr.responseText;
+
+                        dynamicContentDiv.innerHTML += `${tableContent}</table>`;
+                    } catch (e) {
+                        console.error('Error parsing JSON:', e);
+                        dynamicContentDiv.innerHTML = `<h2>Error</h2><p>Invalid JSON22 response</p>`;
+                    }
+                } else {
+                    console.error('HTTP Error:', xhr.status, xhr.statusText);
+                    dynamicContentDiv.innerHTML = `<h2>Error</h2><p>HTTP Error: ${xhr.status}</p>`;
+                }
+            }
+        };
+
+        xhr.send();
+            }
+        }
+    </script>
+</body>
+
+</html>

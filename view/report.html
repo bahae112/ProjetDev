@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Personal Expenses Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet">
+    <style>
+      
+
+      .chatbot {
+        position: fixed;
+        
+        width: 250px; /* Largeur du chatbot */
+        height: 390px; /* Hauteur du conteneur */
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+        display: flex;
+        flex-direction: column;
+        right: 40px; /* Positionné à 40px du bord droit */
+        bottom: 180px; 
+        /*position: relative;*/
+        /*margin: 120px; /* Marge entre la fenêtre et le bord de l'écran */
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .chatbot-toggler{
+        position: fixed;
+        right: 40px;
+        bottom: 100px;
+        height: 50px;
+        width: 50px;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        background: #2c3e50;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+        z-index: 10000; 
+        
+      }
+      
+      .chatbot-toggler span{
+        position: absolute;
+        
+      }
+      .chatbot-toggler span:first-child{
+        
+        visibility: visible;
+      }
+      .chatbot-toggler span:last-child{
+      
+        visibility: hidden;
+      }
+      
+      .chatbot iframe {
+                  width: 100%;
+                  height: 100%;
+                  border: none; /* Enlève la bordure par défaut de l'iframe */
+              }
+      
+      /* iframe {
+        border: none; /* Retire la bordure de l'iframe 
+        flex: 1;
+      
+      }*/
+        
+      
+      
+      
+        </style>
+    <style>
+        .container1 {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader-body">
+          <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <p>Loading...</p>
+        </div>
+      </div>
+      <div class="page">
+         <header class="section page-header rd-navbar-transparent-wrap">
+          <!--RD Navbar-->
+          <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="44px" data-xl-stick-up-offset="44px" data-xxl-stick-up-offset="44px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+              <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+              <div class="rd-navbar-aside-outer rd-navbar-collapse">
+                <div class="rd-navbar-aside">
+                  <div class="rd-navbar-info">
+                    <div class="icon novi-icon mdi mdi-phone"></div><a href="tel:#">+212 000 000 000</a>
+                  </div>
+                  <ul class="list-lined">
+                    <li><a href="connexion.html">Log out</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="rd-navbar-main-outer">
+                <div class="rd-navbar-main-inner">
+                  <div class="rd-navbar-main">
+                    <!--RD Navbar Panel-->
+                    <div class="rd-navbar-panel">
+                      <!--RD Navbar Toggle-->
+                      <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                      <!--RD Navbar Brand-->
+                      <div class="rd-navbar-brand">
+                        <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-293x44.png" alt="" width="146" height="22"/><img class="brand-logo-light" src="images/logo-inverse-310x44.png" alt="" width="155" height="22"/></a>
+                      </div>
+                    </div>
+                    <div class="rd-navbar-main-element">
+                      <div class="rd-navbar-nav-wrap">
+                        <ul class="rd-navbar-nav">
+                          <li class="rd-nav-item"><a class="rd-nav-link" href="categorization.html">Categorization</a></li>
+                          <li class="rd-nav-item"><a class="rd-nav-link" href="charts.html">Charts</a></li>
+                          <li class="rd-nav-item"><a class="rd-nav-link" href="report.html">Report</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div class="rd-navbar-bg novi-background bg-image" style="background-image: url(images/bg-navbar.jpg)"></div>
+        </header>
+        <!-- Breadcrumbs-->
+        <section class="breadcrumbs-custom bg-image novi-background bg-primary">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="index.html">Home</a></li>
+              <li class="active">Personal Expenses Report</li>
+            </ul>
+          </div>
+        </section>
+      </header>       
+      <div class="container1">
+        <h1>Spending Habits Report</h1>
+        <div id="summary"></div>
+        <div id="details"></div>
+    </div>
+    <button class="chatbot-toggler" >
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="close-btn material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+<iframe 
+allow="microphone;"
+height="430" 
+width="350" 
+
+src="https://console.dialogflow.com/api-client/demo/embedded/b5d0062e-b365-49ec-8729-734ae92e57a5">
+</iframe>
+</div>
+    <script>
+      const chatBox = document.querySelector(".chatbot");
+      const chatbotToggler1 = document.querySelector(".chatbot-toggler span:first-child");
+      const chatbotToggler2 = document.querySelector(".chatbot-toggler span:last-child");
+      
+      chatbotToggler1.addEventListener("click", function(){
+          chatBox.style.visibility = "visible";
+          chatbotToggler1.style.visibility = "hidden";
+          chatbotToggler2.style.visibility = "visible";
+      });
+      
+      chatbotToggler2.addEventListener("click", function(){
+          chatBox.style.visibility = "hidden";
+          chatbotToggler2.style.visibility = "hidden";
+          chatbotToggler1.style.visibility = "visible";
+      });
+    </script>
+
+    <script>
+        function fetchExpenses() {
+            fetch('fetch_expenses.php')
+                .then(response => response.json())
+                .then(data => {
+                    if(data.length > 0) {
+                        generateReport(data);
+                    } else {
+                        document.getElementById('summary').innerText = 'No expenses found.';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function generateReport(data) {
+            let totalSpending = 0;
+            let categorySpending = {};
+            let monthlySpending = {};
+
+            data.forEach(expense => {
+                totalSpending += parseFloat(expense.amount);
+
+                if (!categorySpending[expense.category]) {
+                    categorySpending[expense.category] = 0;
+                }
+                categorySpending[expense.category] += parseFloat(expense.amount);
+
+                let date = new Date(expense.date);
+                let monthYear = `${date.getMonth() + 1}-${date.getFullYear()}`;
+                if (!monthlySpending[monthYear]) {
+                    monthlySpending[monthYear] = 0;
+                }
+                monthlySpending[monthYear] += parseFloat(expense.amount);
+            });
+
+            let summaryHtml = `<h2>Total Spending: $${totalSpending.toFixed(2)}</h2>`;
+            summaryHtml += `<h3>Spending by Category:</h3><ul>`;
+            for (let category in categorySpending) {
+                summaryHtml += `<li>${category}: $${categorySpending[category].toFixed(2)}</li>`;
+            }
+            summaryHtml += `</ul>`;
+
+            summaryHtml += `<h3>Monthly Spending:</h3><ul>`;
+            for (let monthYear in monthlySpending) {
+                summaryHtml += `<li>${monthYear}: $${monthlySpending[monthYear].toFixed(2)}</li>`;
+            }
+            summaryHtml += `</ul>`;
+
+            document.getElementById('summary').innerHTML = summaryHtml;
+
+            let detailsHtml = '<h3>Detailed Expenses:</h3>';
+            detailsHtml += '<table><tr><th>Category</th><th>Amount</th><th>Description</th><th>Date</th></tr>';
+            data.forEach(expense => {
+                detailsHtml += `<tr>
+                    <td>${expense.category}</td>
+                    <td>$${parseFloat(expense.amount).toFixed(2)}</td>
+                    <td>${expense.description}</td>
+                    <td>${new Date(expense.date).toLocaleDateString()}</td>
+                </tr>`;
+            });
+            detailsHtml += '</table>';
+
+            document.getElementById('details').innerHTML = detailsHtml;
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchExpenses);
+    </script>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
